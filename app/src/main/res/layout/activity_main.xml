@@ -1,77 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
     tools:context="ib.facmed.unam.mx.simexfacmed.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:paddingBottom="10dp"
+        android:layout_weight="0.9">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:layout_weight="0.33">
+            android:paddingRight="10dp"
+            android:layout_weight="0.5">
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
                 android:src="@drawable/icono_simex"/>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
-                android:src="@drawable/libreta"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIMex"
+                android:textColor="@color/colorPrimary"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_weight="0.33">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:id="@+id/marker"
+                android:onClick="goMaps"
                 android:src="@drawable/marker"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mapas"
+                android:textColor="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
-                android:src="@drawable/cubo"/>
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:src="@drawable/avion"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contactos"
+                android:textColor="@color/colorPrimary"/>
 
         </LinearLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:layout_weight="0.33">
+            android:paddingLeft="10dp"
+            android:layout_weight="0.5">
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
-                android:src="@drawable/avion"/>
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:src="@drawable/libreta"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Programas"
+                android:textColor="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="0.5"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:src="@drawable/cubo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expositores"
+                android:textColor="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
                 android:src="@drawable/lupa"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Busqueda"
+                android:textColor="@color/colorPrimary"/>
+
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:text="Creditos"
+            android:textSize="25sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:scaleType="fitEnd"
+            android:src="@drawable/logo_facmed"/>
+
+    </LinearLayout>
+
+</LinearLayout>

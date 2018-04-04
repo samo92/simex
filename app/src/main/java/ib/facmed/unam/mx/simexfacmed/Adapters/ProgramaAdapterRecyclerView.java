@@ -41,10 +41,10 @@ public class ProgramaAdapterRecyclerView
     public void onBindViewHolder(ProgramaViewHolder holder, int position) {
         Dia_3005 dia = programasArray.get(position);
         holder.horaInicio.setText(dia.getHoraInicio());
-        holder.horaFin.setText(dia.getHoraInicio());
-        holder.registro.setText(dia.getHoraInicio());
-        holder.ponente.setText(dia.getHoraInicio());
-        holder.institucion.setText(dia.getHoraInicio());
+        holder.horaFin.setText(dia.getHoraFin());
+        holder.registro.setText(dia.getActividad());
+        holder.ponente.setText(dia.getPonente());
+        holder.institucion.setText(dia.getSede());
 
     }
 

@@ -1,5 +1,11 @@
 package ib.facmed.unam.mx.simexfacmed.Models;
 
+
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by samo92 on 04/04/2018.
  */
@@ -122,5 +128,20 @@ public class Dia_3005 {
 
     public void setSede4(String sede4) {
         this.sede4 = sede4;
+    }
+
+    //Metodos adicionales
+
+    public String getsoloHoroInicio(){
+        try {
+            Date date = null;
+            date = df.parse(horaInicio);
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            String shortTimeStr = sdf.format(date);
+            System.out.println(shortTimeStr);
+        } catch (ParseException e) {
+            // To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
+        }
     }
 }

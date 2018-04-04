@@ -72,16 +72,16 @@ public class ProgramaRecycler extends AppCompatActivity {
             @Override
             public void onResponse(Call<Programas> call, Response<Programas> response) {
                 Programas programa = response.body();
-                Log.e("idDia",programa.get_3005().get(1).getActividad());
+                Log.e("idDia",programa.getDayOne().get(1).getActividad());
                 switch (idDia) {
                     case "3005":
-                        programaAdaptador.updateAdapter(programa.get_3005());
+                        programaAdaptador.updateAdapter(programa.getDayOne());
                         break;
                     case "3105":
-                        programaAdaptador.updateAdapter(programa.get_3105());
+                        programaAdaptador.updateAdapter(programa.getDayTwo());
                         break;
                     case "0106":
-                        programaAdaptador.updateAdapter(programa.get_0106());
+                        programaAdaptador.updateAdapter(programa.getDayThree());
                         break;
                 }
             }

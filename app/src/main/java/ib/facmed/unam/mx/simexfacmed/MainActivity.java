@@ -22,4 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProgramasActivity.class);
         startActivity(intent);
     }
+
+    public void goCreditos(View view) {
+        Intent intent = new Intent(this, CreditosActivity.class);
+        startActivity(intent);
+    }
 }

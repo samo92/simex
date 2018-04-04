@@ -39,11 +39,9 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-
-        <activity android:name=".ProgramasActivity"></activity>
-
-        <activity android:name=".Ui.ProgramaRecycler"></activity>
-
+        <activity android:name=".ProgramasActivity" />
+        <activity android:name=".Ui.ProgramaRecycler" />
+        <activity android:name=".CreditosActivity"></activity>
     </application>
 
 </manifest>

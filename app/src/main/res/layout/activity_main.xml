@@ -175,7 +175,8 @@
                 android:text="Creditos"
                 android:textColor="@color/colorPrimary"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="goCreditos"/>
 
             <ImageView
                 android:layout_width="wrap_content"

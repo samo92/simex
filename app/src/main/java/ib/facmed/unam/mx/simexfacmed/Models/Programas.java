@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class Programas {
 
-        private ArrayList<Dia_3005> _3005 = null;
-        private ArrayList<Dia_3005> _3105 = null;
-        private ArrayList<Dia_3005> _0106 = null;
+        private ArrayList<Dia_3005> DayOne = null;
+        private ArrayList<Dia_3005> DayTwo = null;
+        private ArrayList<Dia_3005> DayThree = null;
 
         /**
          * No args constructor for use in serialization
@@ -18,34 +18,34 @@ public class Programas {
          */
         public Programas() {
         }
-        public Programas(ArrayList<Dia_3005> _3005, ArrayList<Dia_3005> _3105, ArrayList<Dia_3005> _0106) {
+        public Programas(ArrayList<Dia_3005> DayOne, ArrayList<Dia_3005> DayTwo, ArrayList<Dia_3005> DayThree) {
             super();
-            this._3005 = _3005;
-            this._3105 = _3105;
-            this._0106 = _0106;
+            this.DayOne = DayOne;
+            this.DayTwo = DayTwo;
+            this.DayThree = DayThree;
         }
 
-    public ArrayList<Dia_3005> get_3005() {
-        return _3005;
+    public ArrayList<Dia_3005> getDayOne() {
+        return DayOne;
     }
 
-    public ArrayList<Dia_3005> get_3105() {
-        return _3105;
+    public void setDayOne(ArrayList<Dia_3005> dayOne) {
+        DayOne = dayOne;
     }
 
-    public ArrayList<Dia_3005> get_0106() {
-        return _0106;
+    public ArrayList<Dia_3005> getDayTwo() {
+        return DayTwo;
     }
 
-    public void set_3005(ArrayList<Dia_3005> _3005) {
-        this._3005 = _3005;
+    public void setDayTwo(ArrayList<Dia_3005> dayTwo) {
+        DayTwo = dayTwo;
     }
 
-    public void set_3105(ArrayList<Dia_3005> _3105) {
-        this._3105 = _3105;
+    public ArrayList<Dia_3005> getDayThree() {
+        return DayThree;
     }
 
-    public void set_0106(ArrayList<Dia_3005> _0106) {
-        this._0106 = _0106;
+    public void setDayThree(ArrayList<Dia_3005> dayThree) {
+        DayThree = dayThree;
     }
 }

@@ -40,7 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng centro = new LatLng(19.378139, -99.156844);
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro,10));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centro,10));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centro,12));
 
         // Add a marker in "Palacio de la escuela de medicina" and move the camera
         LatLng palacioMed = new LatLng(19.437815, -99.133386);

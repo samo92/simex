@@ -2,6 +2,7 @@ package ib.facmed.unam.mx.simexfacmed.Models;
 
 
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -131,8 +132,7 @@ public class Dia_3005 {
     }
 
     //Metodos adicionales
-
-    public String getsoloHoroInicio(){
+    /*public String getsoloHoroInicio(){
         try {
             Date date = null;
             date = df.parse(horaInicio);
@@ -143,5 +143,5 @@ public class Dia_3005 {
             // To change body of catch statement use File | Settings | File Templates.
             e.printStackTrace();
         }
-    }
+    }*/
 }

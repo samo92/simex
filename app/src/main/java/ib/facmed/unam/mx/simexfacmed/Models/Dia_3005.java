@@ -132,6 +132,39 @@ public class Dia_3005 {
     }
 
     //Metodos adicionales
+
+    public String getSoloHoraInicio(){
+        if(horaInicio!=null)
+            return horaInicio.substring(11,16);
+        else{
+            return "XX:XX";
+        }
+    }
+
+    public String getSoloHoraFin(){
+        if(horaFin!=null)
+            return horaFin.substring(11,16);
+        else{
+            return "XX:XX";
+        }
+    }
+
+    public String getSoloMesInicio(){
+        if(horaInicio!=null)
+            return horaInicio.substring(5,7);
+        else{
+            return "12";
+        }
+    }
+
+    public String getSoloDiaInicio(){
+        if(horaInicio!=null)
+            return horaInicio.substring(8,10);
+        else{
+            return "01";
+        }
+    }
+
     /*public String getsoloHoroInicio(){
         try {
             Date date = null;

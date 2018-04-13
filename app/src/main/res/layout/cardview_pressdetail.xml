@@ -7,7 +7,7 @@
     android:id="@+id/pressDetailCard"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:text="00:00"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView_horaFin"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             android:textColor="@color/colorAccent"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textAlignment="center"/>
 
         <android.support.constraint.Guideline
@@ -67,37 +67,43 @@
             android:id="@+id/textView_registro"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="12dp"
-            android:maxLines="2"
+            android:maxLines="3"
             android:text="Registro"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView_ponente"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textStyle="bold"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView_ponente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:text="Ponente"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView_registro"
-            android:textColor="@color/colorAccent"/>
+            app:layout_constraintStart_toStartOf="@+id/textView_registro" />
 
         <TextView
             android:id="@+id/textView_institucion"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="5dp"
             android:text="Institucion"
+            android:textColor="@color/colorPrimary"
+            android:maxLines="3"
+            android:textSize="10sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView_ponente"
-            app:layout_constraintStart_toEndOf="@+id/textView_ponente"
-            android:textColor="@color/colorPrimary"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_ponente" />
 
 
     </android.support.constraint.ConstraintLayout>

@@ -27,4 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CreditosActivity.class);
         startActivity(intent);
     }
+
+    public void goBusqueda(View view) {
+        Intent intent = new Intent(this, BusquedaActivity.class);
+        startActivity(intent);
+    }
 }

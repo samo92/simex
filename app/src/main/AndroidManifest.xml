@@ -41,7 +41,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".ProgramasActivity" />
         <activity android:name=".Ui.ProgramaRecycler" />
-        <activity android:name=".CreditosActivity"></activity>
+        <activity android:name=".CreditosActivity" />
+        <activity android:name=".BusquedaActivity"></activity>
     </application>
 
 </manifest>

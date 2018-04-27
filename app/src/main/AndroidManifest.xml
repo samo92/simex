@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +43,24 @@
         <activity android:name=".ProgramasActivity" />
         <activity android:name=".Ui.ProgramaRecycler" />
         <activity android:name=".CreditosActivity" />
-        <activity android:name=".BusquedaActivity"></activity>
-    </application>
+
+        <!-- this is the searchable activity; it performs searches -->
+        <activity android:name=".SearchableActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <!-- this activity enables the search dialog to initiate searches
+             in the SearchableActivity -->
+        <activity android:name=".BusquedaActivity"
+                    android:theme="@style/SearchAppTheme">
+        </activity>
+
+
+
+</application>
 
 </manifest>

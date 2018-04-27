@@ -31,4 +31,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
 }

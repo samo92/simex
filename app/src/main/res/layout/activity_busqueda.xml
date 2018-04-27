@@ -6,14 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BusquedaActivity"
-    android:orientation="vertical"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp">
+    android:orientation="vertical">
+
+    <include layout="@layout/custom_toolbar"/>
 
     <CheckedTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkTema"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:text="Tema"
         android:textSize="20sp"
         android:textColor="@color/colorAccent"
@@ -24,6 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkExpositor"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:text="Expositor"
         android:textSize="20sp"
         android:textColor="@color/colorAccent"
@@ -33,8 +37,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Realiza una busqueda especifica\n por categoria dentro del contenido del programa"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Realiza una busqueda especifica\npor categoria dentro del contenido del programa"
         android:textSize="14sp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buscandoRecycler"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
 
 
 </LinearLayout>

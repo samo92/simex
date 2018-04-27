@@ -2,6 +2,7 @@ package ib.facmed.unam.mx.simexfacmed.Models;
 
 
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,7 +12,7 @@ import java.util.Date;
  * Created by samo92 on 04/04/2018.
  */
 
-public class Dia_3005 {
+public class Dia_3005 implements Serializable {
 
     private String horaInicio;
     private String horaFin;
@@ -68,7 +69,11 @@ public class Dia_3005 {
     }
 
     public String getPonente() {
-        return ponente;
+        if(ponente!=null)
+            return ponente;
+        else{
+            return "---";
+        }
     }
 
     public void setPonente(String ponente) {

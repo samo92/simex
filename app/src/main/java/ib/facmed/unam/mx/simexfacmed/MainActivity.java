@@ -44,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goEmpty(View view) {
+        Intent intent = new Intent(this, EmptyActivity.class);
+        startActivity(intent);
+    }
+
     public void goBusqueda(View view) {
 
         loadJSON();

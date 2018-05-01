@@ -59,6 +59,9 @@
                     android:theme="@style/SearchAppTheme">
         </activity>
 
+        <activity android:name=".EmptyActivity">
+        </activity>
+
 
 
 </application>

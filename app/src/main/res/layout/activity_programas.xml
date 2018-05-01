@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context="ib.facmed.unam.mx.simexfacmed.ProgramasActivity">
 
+    <include
+        layout="@layout/custom_actionbar"
+        android:id="@+id/appbar_main">
+    </include>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="70dp"

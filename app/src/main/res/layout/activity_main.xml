@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="0.07"
-                android:text="SIMex"
+                android:text="Nosotros"
                 android:textColor="@color/colorPrimary"/>
 
             <View
@@ -124,7 +124,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/cubo"
-                android:onClick="goEmpty"/>
+                android:onClick="goExpositores"/>
 
             <TextView
                 android:layout_width="wrap_content"

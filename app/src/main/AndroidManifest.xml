@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/SearchAppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,31 +40,41 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ProgramasActivity" />
         <activity android:name=".Ui.ProgramaRecycler" />
         <activity android:name=".CreditosActivity" />
 
         <!-- this is the searchable activity; it performs searches -->
-        <activity android:name=".SearchableActivity" >
+        <activity android:name=".SearchableActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
 
-        <!-- this activity enables the search dialog to initiate searches
-             in the SearchableActivity -->
-        <activity android:name=".BusquedaActivity"
-                    android:theme="@style/SearchAppTheme">
+        <!--
+             this activity enables the search dialog to initiate searches
+             in the SearchableActivity
+        -->
+        <activity
+            android:name=".BusquedaActivity"
+            android:theme="@style/SearchAppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".EmptyActivity">
+        <activity android:name=".EmptyActivity"
+            android:screenOrientation="portrait">
         </activity>
 
-
-
-</application>
+        <activity android:name=".ExpositoresActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
 
 </manifest>

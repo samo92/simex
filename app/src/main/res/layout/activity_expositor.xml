@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/custom_actionbar"
+        android:id="@+id/appbar_main">
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingVertical="15dp"
+        android:layout_weight="1.0">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_3b"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_adam"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_aramed"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_dinsa"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_gordoncenter"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_laerdal"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.14"
+            android:src="@drawable/ponente_otosim"/>
+
+    </LinearLayout>
+
+</LinearLayout>

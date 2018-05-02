@@ -55,7 +55,7 @@ public class BusquedaActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Material Search");
+        getSupportActionBar().setTitle("Busca algun evento...");
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
 
         searchView = (MaterialSearchView) findViewById(R.id.search_view);

@@ -1,12 +1,18 @@
 package ib.facmed.unam.mx.simexfacmed;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
@@ -21,16 +27,28 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String PERSON_PREFERENCE_KEY = "MisPreferencias";
+
+    private Programas programa;
+    private Programas programaPreferences = new Programas();
+    private Programas programaRetrofit;
     private ArrayList<Dia_3005> todoEventos = new ArrayList<>();
     private PostApiService postApiService;
+
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_main);
-        setSupportActionBar(toolbar);
+
+
+        loadJSON();
+    }
+
+    public void goNosotros(View view) {
+        Intent intent = new Intent(this, NosotrosActivity.class);
+        startActivity(intent);
     }
 
     public void goMaps(View view) {
@@ -39,8 +57,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPress(View view) {
-        Intent intent = new Intent(this, ProgramasActivity.class);
-        startActivity(intent);
+
+        if(!todoEventos.isEmpty()){
+            Intent intent = new Intent(MainActivity.this, ProgramasActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("objPrograma", programa);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
     }
 
     public void goCreditos(View view) {
@@ -60,7 +84,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void goBusqueda(View view) {
 
-        loadJSON();
+        if(!todoEventos.isEmpty()){
+            Intent intent = new Intent(MainActivity.this, BusquedaActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("arrayEventos", todoEventos);
+                intent.putExtras(bundle);
+                startActivity(intent);
+        }
 
     }
 
@@ -69,27 +99,88 @@ public class MainActivity extends AppCompatActivity {
         postApiService = ApiService.createApiService();
         Call<Programas> responsePost = postApiService.getPrograma();
 
+        readSharedPreferences();
+
         responsePost.enqueue(new Callback<Programas>() {
             @Override
             public void onResponse(Call<Programas> call, Response<Programas> response) {
-                Programas programa = response.body();
-                todoEventos.addAll(programa.getDayOne());
-                todoEventos.addAll(programa.getDayTwo());
-                todoEventos.addAll(programa.getDayThree());
-                Log.e("idDia",programa.getDayOne().get(1).getActividad());
+                programaRetrofit = response.body();
 
-                Intent intent = new Intent(MainActivity.this, BusquedaActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("arrayEventos", todoEventos);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /** VALIDAMOS LOS OBJETOS Y ACTUALIZAMOS PREFERENCES  **/
+                if( programaPreferences!=null && !programaPreferences.equals("")){
+                    todoEventos.addAll(programaPreferences.getDayOne());
+                    todoEventos.addAll(programaPreferences.getDayTwo());
+                    todoEventos.addAll(programaPreferences.getDayThree());
+                    Log.d("objIGUALES","RETROFIT Y PREFERENCES: objetos son iguales");
+                    programa=programaPreferences;
+                }else{
+                    todoEventos.addAll(programaRetrofit.getDayOne());
+                    todoEventos.addAll(programaRetrofit.getDayTwo());
+                    todoEventos.addAll(programaRetrofit.getDayThree());
+                    Log.d("objDIFERENTES","RETROFIT Y PREFERENCES: objetos son DIFERENTES (usando RETROFIT)");
+                    Log.d("idDia",programaRetrofit.getDayOne().get(1).getActividad());
+                    createSharedPreferences(programaRetrofit);
+                }
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                setContentView(R.layout.activity_main);
+
+                toolbar = (Toolbar) findViewById(R.id.appbar_main);
+                setSupportActionBar(toolbar);
 
             }
 
             @Override
             public void onFailure(Call<Programas> call, Throwable t) {
 
+                if( programaPreferences!=null && !programaPreferences.equals("")) {
+                    todoEventos.addAll(programaPreferences.getDayOne());
+                    todoEventos.addAll(programaPreferences.getDayTwo());
+                    todoEventos.addAll(programaPreferences.getDayThree());
+                    Log.d("objIGUALES", "RETROFIT Y PREFERENCES: objetos son iguales");
+                    programa = programaPreferences;
+                }
+
+                setContentView(R.layout.activity_main);
+
+                toolbar = (Toolbar) findViewById(R.id.appbar_main);
+                setSupportActionBar(toolbar);
+
             }
         });
+    }
+
+    private boolean haveNetworkConnection() {
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveConnectedWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveConnectedMobile = true;
+        }
+        return haveConnectedWifi || haveConnectedMobile;
+    }
+
+    private void createSharedPreferences(Programas programa){
+        SharedPreferences settings = getSharedPreferences(PERSON_PREFERENCE_KEY,0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        String json = new Gson().toJson(programa);
+        editor.putString("jsonPrograma",json);
+
+        editor.commit();
+    }
+
+    private void readSharedPreferences(){
+        SharedPreferences settings = getSharedPreferences(PERSON_PREFERENCE_KEY,0);
+        String json = settings.getString("jsonPrograma","");
+        programaPreferences = new Gson().fromJson(json, Programas.class);
     }
 }

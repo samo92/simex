@@ -16,8 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SearchAppTheme">
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,13 +41,14 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity android:name=".ProgramasActivity" />
         <activity android:name=".Ui.ProgramaRecycler" />
         <activity android:name=".CreditosActivity" />
 
         <!-- this is the searchable activity; it performs searches -->
-        <activity android:name=".SearchableActivity"
+        <activity
+            android:name=".SearchableActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -64,17 +65,15 @@
         -->
         <activity
             android:name=".BusquedaActivity"
-            android:theme="@style/SearchAppTheme"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".EmptyActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".ExpositoresActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchAppTheme"></activity>
+        <activity
+            android:name=".EmptyActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ExpositoresActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".NosotrosActivity"></activity>
     </application>
 
 </manifest>

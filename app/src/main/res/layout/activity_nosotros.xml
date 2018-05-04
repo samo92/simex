@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NosotrosActivity">
+
+    <include
+        layout="@layout/custom_actionbar"
+        android:id="@+id/appbar_main">
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_weight="1.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:text="El Segundo Encuentro Internacional de Simulacion SIMex2018 brinda un espacio para los profesionales de la salud, interesados por la simulacion como estrategia educativa, para adquirir e intercambiar experiencias, así como estar en contacto con los avances tecnologicos mas recientes en este campo para incrementar la calidad de la atencion médica y la seguridad de los pacientes."
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:src="@drawable/simex_promo"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,16 +1,24 @@
 package ib.facmed.unam.mx.simexfacmed.Models;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by samo92 on 04/04/2018.
  */
 
-public class Programas {
+public class Programas implements Serializable {
 
-        private ArrayList<Dia_3005> DayOne = null;
-        private ArrayList<Dia_3005> DayTwo = null;
-        private ArrayList<Dia_3005> DayThree = null;
+    @SerializedName("DayOne")
+    private ArrayList<Dia_3005> DayOne = null;
+
+    @SerializedName("DayTwo")
+    private ArrayList<Dia_3005> DayTwo = null;
+
+    @SerializedName("DayThree")
+    private ArrayList<Dia_3005> DayThree = null;
 
         /**
          * No args constructor for use in serialization

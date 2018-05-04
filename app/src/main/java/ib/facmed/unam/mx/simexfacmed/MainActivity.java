@@ -21,6 +21,7 @@ import ib.facmed.unam.mx.simexfacmed.Api.ApiService;
 import ib.facmed.unam.mx.simexfacmed.Api.PostApiService;
 import ib.facmed.unam.mx.simexfacmed.Models.Dia_3005;
 import ib.facmed.unam.mx.simexfacmed.Models.Programas;
+import ib.facmed.unam.mx.simexfacmed.Ui.PonenteRecycler;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goExpositores(View view) {
         Intent intent = new Intent(this, ExpositoresActivity.class);
+        startActivity(intent);
+    }
+
+    public void goPonentes(View view) {
+        Intent intent = new Intent(this, PonenteRecycler.class);
         startActivity(intent);
     }
 

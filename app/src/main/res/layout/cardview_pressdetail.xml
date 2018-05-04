@@ -65,20 +65,14 @@
 
         <TextView
             android:id="@+id/textView_registro"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="246dp"
+            android:layout_height="67dp"
             android:maxLines="3"
             android:text="Registro"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView_ponente"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="12dp" />
 
         <TextView
             android:id="@+id/textView_ponente"

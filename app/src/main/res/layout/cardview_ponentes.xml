@@ -7,26 +7,26 @@
     android:id="@+id/ponentesDetailCard"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="140dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView_ponente"
-            android:layout_width="50dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="2dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/avion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:civ_border_width="0dp"/>
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
@@ -36,33 +36,41 @@
             app:layout_constraintGuide_percent="0.3" />
 
         <TextView
-            android:id="@+id/textView_ponente"
+            android:id="@+id/textView_ponente_nombre"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="25dp"
+            android:maxLines="1"
             android:text="PONENTE"
             android:textColor="@color/colorAccent"
-            android:textSize="15sp"
-            android:maxLines="1"
-            app:layout_constraintBottom_toTopOf="@+id/textView_institucion"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView_institucion"
+            android:id="@+id/textView_ponente_institucion"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginEnd="8dp"
-            android:text="Institucion"
-            android:textSize="10sp"
+            android:layout_marginTop="5dp"
             android:maxLines="2"
+            android:text="Institucion"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView_ponente" />
+            app:layout_constraintStart_toStartOf="@+id/textView_ponente_nombre"
+            app:layout_constraintTop_toBottomOf="@+id/textView_ponente_nombre" />
     </android.support.constraint.ConstraintLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
 </android.support.v7.widget.CardView>
+

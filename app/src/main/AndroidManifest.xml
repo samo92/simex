@@ -73,8 +73,10 @@
         <activity
             android:name=".ExpositoresActivity"
             android:screenOrientation="portrait" />
+
         <activity android:name=".NosotrosActivity" />
-        <activity android:name=".Ui.PonenteRecycler"></activity>
+
+        <activity android:name=".Ui.PonenteRecycler"/>
     </application>
 
 </manifest>

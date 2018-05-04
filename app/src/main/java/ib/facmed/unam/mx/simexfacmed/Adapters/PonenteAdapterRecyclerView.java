@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.ArrayList;
 
 import ib.facmed.unam.mx.simexfacmed.Models.Dia_3005;
+import ib.facmed.unam.mx.simexfacmed.Models.Ponente;
 import ib.facmed.unam.mx.simexfacmed.Models.Programas;
 import ib.facmed.unam.mx.simexfacmed.R;
 
@@ -29,12 +30,12 @@ import ib.facmed.unam.mx.simexfacmed.R;
 public class PonenteAdapterRecyclerView
         extends RecyclerView.Adapter<PonenteAdapterRecyclerView.PonenteViewHolder>{
 
-    private ArrayList<DrawableRes> ponentesArray;
+    private ArrayList<Ponente> ponentesArray;
     private int resource;
     private Activity activity;
 
 
-    public PonenteAdapterRecyclerView(ArrayList<DrawableRes> ponentesArray, int resource, Activity activity){
+    public PonenteAdapterRecyclerView(ArrayList<Ponente> ponentesArray, int resource, Activity activity){
         this.ponentesArray = ponentesArray;
         this.resource=resource;
         this.activity=activity;
@@ -62,7 +63,7 @@ public class PonenteAdapterRecyclerView
         public PonenteViewHolder(View itemView) {
             super(itemView);
 
-            ponenteImg = (ImageView) itemView.findViewById(R.id.img_ponente);
+            //ponenteImg = (ImageView) itemView.findViewById(R.id.img_ponente);
 
         }
     }
@@ -77,7 +78,7 @@ public class PonenteAdapterRecyclerView
 
     public void updateAdapter (ArrayList<DrawableRes> items){
         ponentesArray.clear();
-        ponentesArray=items;
+        //ponentesArray=items;
         notifyDataSetChanged();
     }
 }

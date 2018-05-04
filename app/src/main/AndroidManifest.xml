@@ -66,14 +66,15 @@
         <activity
             android:name=".BusquedaActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SearchAppTheme"></activity>
+            android:theme="@style/SearchAppTheme" />
         <activity
             android:name=".EmptyActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExpositoresActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".NosotrosActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".NosotrosActivity" />
+        <activity android:name=".Ui.PonenteRecycler"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ib.facmed.unam.mx.simexfacmed">
 
@@ -17,12 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SearchAppTheme">
-
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -40,11 +36,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait" />
-
         <activity android:name=".ProgramasActivity" />
-
         <activity android:name=".Ui.ProgramaRecycler" />
-
         <activity android:name=".CreditosActivity" />
 
         <!-- this is the searchable activity; it performs searches -->
@@ -76,20 +69,23 @@
             android:screenOrientation="portrait" />
         <activity android:name=".NosotrosActivity" />
         <activity android:name=".Ui.PonenteRecycler" />
-
         <activity
             android:name=".DetalleEventosActivity"
             android:label="@string/title_activity_detalle_eventos"
             android:theme="@style/SearchAppTheme">
 
+        </activity>
+        <activity android:name=".SeleccionaMapasActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
+        <activity android:name=".MapSedeActivity">
+
+        </activity>
     </application>
 
 </manifest>

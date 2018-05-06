@@ -90,6 +90,7 @@ public class ProgramaAdapterRecyclerView
 
         }
 
+
         @Override
         public void onClick(View view) {
 
@@ -118,9 +119,6 @@ public class ProgramaAdapterRecyclerView
             //intent.putExtra(CalendarContract.Events.EVENT_LOCATION, localizacion.getText().toString());
 
             activity.startActivity(intent);
-
-
-
         }
     }
 }

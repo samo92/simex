@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ib.facmed.unam.mx.simexfacmed.SeleccionaMapasActivity">
+
+    <include
+        layout="@layout/custom_actionbar"
+        android:id="@+id/appbar_main">
+    </include>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/btn_mapa_palacio"
+        android:drawableRight="@drawable/flechader"
+        android:onClick="goShowMaps"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:tag="palacio"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/btn_mapa_posgrado"
+        android:drawableRight="@drawable/flechader"
+        android:onClick="goShowMaps"
+        android:text="UNIDAD DE POSGRADO - CU"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:tag="posgrado"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/btn_mapa_facmed"
+        android:drawableRight="@drawable/flechader"
+        android:onClick="goShowMaps"
+        android:text="FACULTAD DE MEDICINA - CU"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:tag="facmed"/>
+
+</LinearLayout>

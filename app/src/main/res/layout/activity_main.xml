@@ -31,7 +31,7 @@
             android:layout_weight="0.5">
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/icono_simex"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="0.07"
-                android:text="Nosotros"
+                android:text="Bienvenido"
                 android:textColor="@color/colorPrimary"/>
 
             <View
@@ -51,7 +51,7 @@
                 android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:id="@+id/marker"
@@ -72,7 +72,7 @@
                 android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/indice"
@@ -101,7 +101,7 @@
             android:layout_weight="0.5">
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/libreta"
@@ -121,7 +121,7 @@
                 android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/cubo"
@@ -141,7 +141,7 @@
                 android:background="@color/colorPrimary" />
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
                 android:src="@drawable/lupa"
@@ -183,7 +183,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:text="Creditos"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:onClick="goCreditos"/>

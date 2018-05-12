@@ -17,9 +17,6 @@ public class ProgramasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programas);
-
-        //Bundle bundle = getIntent().getExtras();
-        //todoEventos = (ArrayList<Dia_3005>) bundle.getSerializable("arrayEventos");
     }
 
     public void goPressDetail(View view){

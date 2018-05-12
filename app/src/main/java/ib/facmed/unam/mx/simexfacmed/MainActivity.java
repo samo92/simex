@@ -112,21 +112,24 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Programas> call, Response<Programas> response) {
                 programaRetrofit = response.body();
 
+                String json1 = new Gson().toJson(programaPreferences);
+                String json2 = new Gson().toJson(programaRetrofit);
+
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 /** VALIDAMOS LOS OBJETOS Y ACTUALIZAMOS PREFERENCES  **/
-                if( programaPreferences!=null && !programaPreferences.equals("")){
+                if(json2.equals(json1)){
                     todoEventos.addAll(programaPreferences.getDayOne());
                     todoEventos.addAll(programaPreferences.getDayTwo());
                     todoEventos.addAll(programaPreferences.getDayThree());
-                    Log.d("objIGUALES","RETROFIT Y PREFERENCES: objetos son iguales");
+                    //Log.d("objIGUALES","RETROFIT Y PREFERENCES: objetos son iguales");
                     programa=programaPreferences;
+                    //Toast.makeText(MainActivity.this, "OnResponse usando sharedPreferences", Toast.LENGTH_SHORT).show();
                 }else{
                     todoEventos.addAll(programaRetrofit.getDayOne());
                     todoEventos.addAll(programaRetrofit.getDayTwo());
                     todoEventos.addAll(programaRetrofit.getDayThree());
-                    Log.d("objDIFERENTES","RETROFIT Y PREFERENCES: objetos son DIFERENTES (usando RETROFIT)");
-                    Log.d("idDia",programaRetrofit.getDayOne().get(1).getActividad());
                     createSharedPreferences(programaRetrofit);
+                    //Toast.makeText(MainActivity.this, "usando retrofit", Toast.LENGTH_SHORT).show();
                 }
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,7 +147,8 @@ public class MainActivity extends AppCompatActivity {
                     todoEventos.addAll(programaPreferences.getDayOne());
                     todoEventos.addAll(programaPreferences.getDayTwo());
                     todoEventos.addAll(programaPreferences.getDayThree());
-                    Log.d("objIGUALES", "RETROFIT Y PREFERENCES: objetos son iguales");
+                    //Log.d("objIGUALES", "RETROFIT Y PREFERENCES: objetos son iguales");
+                    Toast.makeText(MainActivity.this, "usando sharedPreferences", Toast.LENGTH_SHORT).show();
                     programa = programaPreferences;
                 }
 

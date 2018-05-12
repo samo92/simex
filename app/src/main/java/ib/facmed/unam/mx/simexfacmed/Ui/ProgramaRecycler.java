@@ -26,8 +26,6 @@ import retrofit2.Response;
 
 public class ProgramaRecycler extends AppCompatActivity {
 
-    private PostApiService postApiService;
-
     private ProgramaAdapterRecyclerView programaAdaptador;
 
     private String idDia;
@@ -81,33 +79,4 @@ public class ProgramaRecycler extends AppCompatActivity {
 
 
     }
-
-    /*private void loadJSON(){
-        postApiService = ApiService.createApiService();
-        Call<Programas> responsePost = postApiService.getPrograma();
-
-        responsePost.enqueue(new Callback<Programas>() {
-            @Override
-            public void onResponse(Call<Programas> call, Response<Programas> response) {
-                Programas programa = response.body();
-                Log.e("idDia",programa.getDayOne().get(1).getActividad());
-                switch (idDia) {
-                    case "3005":
-                        programaAdaptador.updateAdapter(programa.getDayOne());
-                        break;
-                    case "3105":
-                        programaAdaptador.updateAdapter(programa.getDayTwo());
-                        break;
-                    case "0106":
-                        programaAdaptador.updateAdapter(programa.getDayThree());
-                        break;
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Programas> call, Throwable t) {
-
-            }
-        });
-    }*/
 }

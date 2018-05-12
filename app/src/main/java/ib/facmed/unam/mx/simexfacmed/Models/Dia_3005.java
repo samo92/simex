@@ -26,10 +26,10 @@ public class Dia_3005 implements Serializable {
     private String ponente4;
     private String sede4;
 
-    public Dia_3005 () {
+    public Dia_3005() {
     }
 
-    public Dia_3005 (String horaInicio, String horaFin, String actividad, String ponente, String sede, String ponente2, String sede2, String ponente3, String sede3, String ponente4, String sede4) {
+    public Dia_3005(String horaInicio, String horaFin, String actividad, String ponente, String sede, String ponente2, String sede2, String ponente3, String sede3, String ponente4, String sede4) {
         super();
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
@@ -69,10 +69,10 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getPonente() {
-        if(ponente!=null)
+        if (ponente != null)
             return ponente;
-        else{
-            return "---";
+        else {
+            return "";
         }
     }
 
@@ -81,7 +81,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getSede() {
-        return sede;
+        if (sede != null)
+            return sede;
+        else {
+            return "";
+        }
     }
 
     public void setSede(String sede) {
@@ -89,7 +93,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getPonente2() {
-        return ponente2;
+        if (ponente2 != null)
+            return ponente2;
+        else {
+            return "";
+        }
     }
 
     public void setPonente2(String ponente2) {
@@ -97,7 +105,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getSede2() {
-        return sede2;
+        if (sede2 != null)
+            return sede2;
+        else {
+            return "";
+        }
     }
 
     public void setSede2(String sede2) {
@@ -105,7 +117,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getPonente3() {
-        return ponente3;
+        if (ponente3 != null)
+            return ponente3;
+        else {
+            return "";
+        }
     }
 
     public void setPonente3(String ponente3) {
@@ -113,7 +129,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getSede3() {
-        return sede3;
+        if (sede3 != null)
+            return sede3;
+        else {
+            return "";
+        }
     }
 
     public void setSede3(String sede3) {
@@ -121,7 +141,11 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getPonente4() {
-        return ponente4;
+        if (ponente4 != null)
+            return ponente4;
+        else {
+            return "";
+        }
     }
 
     public void setPonente4(String ponente4) {
@@ -129,57 +153,70 @@ public class Dia_3005 implements Serializable {
     }
 
     public String getSede4() {
-        return sede4;
+        if (sede4 != null)
+            return sede4;
+        else {
+            return "";
+        }
     }
 
     public void setSede4(String sede4) {
         this.sede4 = sede4;
     }
 
+
     //Metodos adicionales
 
-    public String getSoloHoraInicio(){
-        if(horaInicio!=null)
-            return horaInicio.substring(11,16);
-        else{
+    public String getSoloHoraInicio() {
+        if (horaInicio != null)
+            return horaInicio.substring(11, 16);
+        else {
             return "XX:XX";
         }
     }
 
-    public String getSoloHoraFin(){
-        if(horaFin!=null)
-            return horaFin.substring(11,16);
-        else{
+    public String getSoloHoraFin() {
+        if (horaFin != null)
+            return horaFin.substring(11, 16);
+        else {
             return "XX:XX";
         }
     }
 
-    public String getSoloMesInicio(){
-        if(horaInicio!=null)
-            return horaInicio.substring(5,7);
-        else{
+    public String getSoloMesInicio() {
+        if (horaInicio != null)
+            return horaInicio.substring(5, 7);
+        else {
             return "12";
         }
     }
 
-    public String getSoloDiaInicio(){
-        if(horaInicio!=null)
-            return horaInicio.substring(8,10);
-        else{
+    public String getSoloDiaInicio() {
+        if (horaInicio != null)
+            return horaInicio.substring(8, 10);
+        else {
             return "01";
         }
     }
 
-    /*public String getsoloHoroInicio(){
-        try {
-            Date date = null;
-            date = df.parse(horaInicio);
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-            String shortTimeStr = sdf.format(date);
-            System.out.println(shortTimeStr);
-        } catch (ParseException e) {
-            // To change body of catch statement use File | Settings | File Templates.
-            e.printStackTrace();
+    public String getFechaCompleta() {
+        String fecha="";
+        if (horaInicio != null) {
+            String dia = horaInicio.substring(8, 10);
+            switch (dia){
+                case "30":
+                    fecha = "30 de Mayo del 2018";
+                    break;
+                case "31":
+                    fecha = "31 de Mayo del 2018";
+                    break;
+                case "01":
+                    fecha = "01 de Junio del 2018";
+                    break;
+            }
+            return fecha;
+            }else{
+            return fecha;
         }
-    }*/
+    }
 }

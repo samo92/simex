@@ -35,8 +35,6 @@ public class BusquedaActivity extends AppCompatActivity {
 
     MaterialSearchView searchView;
 
-    private PostApiService postApiService;
-
     RecyclerView programaRecycler;
     private ProgramaAdapterRecyclerView programaAdaptador;
 

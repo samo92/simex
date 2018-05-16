@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import ib.facmed.unam.mx.simexfacmed.Models.Ponente;
@@ -40,8 +42,12 @@ public class PonentesAdapterRecyclerView
     @Override
     public void onBindViewHolder(PonenteViewHolder holder, int position) {
         Ponente ponente = ponenteArray.get(position);
-        holder.ponenteImg.setImageResource(ponente.getImagenPonente());
-        holder.nombre.setText(ponente.getNombre());
+        //holder.ponenteImg.setImageResource(ponente.getImagen());
+        Picasso.get()
+                .load(ponente.getImagen())
+                //.centerCrop()
+                .into(holder.ponenteImg);
+        holder.nombre.setText(ponente.getNombrePonente());
         holder.institucion.setText(ponente.getInstitucion());
 
     }

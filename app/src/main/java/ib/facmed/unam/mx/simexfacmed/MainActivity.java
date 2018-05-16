@@ -20,7 +20,9 @@ import java.util.ArrayList;
 import ib.facmed.unam.mx.simexfacmed.Api.ApiService;
 import ib.facmed.unam.mx.simexfacmed.Api.PostApiService;
 import ib.facmed.unam.mx.simexfacmed.Models.Dia_3005;
+import ib.facmed.unam.mx.simexfacmed.Models.Ponente;
 import ib.facmed.unam.mx.simexfacmed.Models.Programas;
+import ib.facmed.unam.mx.simexfacmed.Models.SimexPonentes;
 import ib.facmed.unam.mx.simexfacmed.Ui.PonenteRecycler;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,8 +35,11 @@ public class MainActivity extends AppCompatActivity {
     private Programas programa;
     private Programas programaPreferences = new Programas();
     private Programas programaRetrofit;
+    private SimexPonentes ponentesRetrofit;
     private ArrayList<Dia_3005> todoEventos = new ArrayList<>();
+    private ArrayList<Ponente> arrayPonentes = new ArrayList<>();
     private PostApiService postApiService;
+    private PostApiService postApiService2;
 
     Toolbar toolbar;
 
@@ -80,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goPonentes(View view) {
         Intent intent = new Intent(this, PonenteRecycler.class);
+        if(!arrayPonentes.isEmpty() && arrayPonentes!=null){
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("arrayPonentes", arrayPonentes);
+            intent.putExtras(bundle);
+        }
         startActivity(intent);
     }
 
@@ -138,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
                 toolbar = (Toolbar) findViewById(R.id.appbar_main);
                 setSupportActionBar(toolbar);
 
+                loadJsonPonentes();
+
             }
 
             @Override
@@ -156,6 +168,37 @@ public class MainActivity extends AppCompatActivity {
 
                 toolbar = (Toolbar) findViewById(R.id.appbar_main);
                 setSupportActionBar(toolbar);
+
+            }
+        });
+    }
+
+    private void loadJsonPonentes(){
+        postApiService2 = ApiService.createApiService();
+        Call<SimexPonentes> responsePost = postApiService2.getPonentes();
+
+        readSharedPreferences();
+
+        responsePost.enqueue(new Callback<SimexPonentes>() {
+            @Override
+            public void onResponse(Call<SimexPonentes> call, Response<SimexPonentes> response) {
+                ponentesRetrofit = response.body();
+
+                    arrayPonentes.addAll(ponentesRetrofit.getPonentes());
+                setContentView(R.layout.activity_main);
+
+                toolbar = (Toolbar) findViewById(R.id.appbar_main);
+                setSupportActionBar(toolbar);
+            }
+
+            @Override
+            public void onFailure(Call<SimexPonentes> call, Throwable t) {
+
+                setContentView(R.layout.activity_main);
+
+                toolbar = (Toolbar) findViewById(R.id.appbar_main);
+                setSupportActionBar(toolbar);
+
 
             }
         });

@@ -15,11 +15,22 @@ public class PonenteRecycler extends AppCompatActivity {
 
     PonentesAdapterRecyclerView ponenteAdaptador;
 
+    private ArrayList<Ponente> arrayPonentes = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ponenterecycler);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            arrayPonentes = (ArrayList<Ponente>) bundle.getSerializable("arrayPonentes");
+        }else{
+            arrayPonentes.addAll(llenarArray());
+        }
+
+
 
         initViews();
 
@@ -40,14 +51,13 @@ public class PonenteRecycler extends AppCompatActivity {
 
         //Instanciamos nuestro adaptador
         ponenteAdaptador =
-                new PonentesAdapterRecyclerView(llenarArray(), R.layout.cardview_ponentes, this);
+                new PonentesAdapterRecyclerView(arrayPonentes, R.layout.cardview_ponentes, this);
         ponenteRecycler.setAdapter(ponenteAdaptador);
-
 
 
     }
 
-    private ArrayList<Ponente> llenarArray(){
+    private ArrayList<Ponente> llenarArray() {
 
         ArrayList<Ponente> arrayPonente = new ArrayList<Ponente>();
 

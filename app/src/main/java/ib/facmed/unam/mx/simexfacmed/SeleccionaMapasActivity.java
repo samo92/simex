@@ -19,7 +19,7 @@ public class SeleccionaMapasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selecciona_mapas);
 
         btn_palacio = (Button) findViewById(R.id.btn_mapa_palacio);
-        btn_palacio.setText(getText(R.string.button_palacio_sede));
+        btn_palacio.setText(R.string.button_palacio_sede);
 
         btn_posgrado = (Button) findViewById(R.id.btn_mapa_posgrado);
         btn_posgrado.setText(getText(R.string.button_palacio_posgrado));

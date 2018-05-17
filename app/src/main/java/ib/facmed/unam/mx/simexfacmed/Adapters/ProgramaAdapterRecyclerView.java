@@ -98,7 +98,7 @@ public class ProgramaAdapterRecyclerView
 
             AlertDialog.Builder mybuild = new AlertDialog.Builder(itemView.getContext());
             mybuild.setMessage("Que deseas hacer: ");
-            mybuild.setTitle("prueba");
+            mybuild.setTitle("SIMEX");
 
             mybuild.setPositiveButton("Agendar", new DialogInterface.OnClickListener() {
                 @Override
@@ -146,34 +146,6 @@ public class ProgramaAdapterRecyclerView
 
             AlertDialog dialog = mybuild.create();
             dialog.show();
-
-            /*
-            Log.e("mes: ", programasArray.get(getAdapterPosition()).getSoloMesInicio() );
-            Log.e("dia ", programasArray.get(getAdapterPosition()).getSoloDiaInicio() );
-
-            Calendar cal = Calendar.getInstance();
-            Intent intent = new Intent(Intent.ACTION_EDIT);
-
-            cal.set(Calendar.YEAR, Integer.parseInt("2018"));                 //
-            cal.set(Calendar.MONTH, Integer.parseInt( programasArray.get(getAdapterPosition()).getSoloMesInicio() ));   // Set de AÑO MES y Dia
-            cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt( programasArray.get(getAdapterPosition()).getSoloDiaInicio() ));       //
-
-
-            cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(String.valueOf(horaInicio.getText()).substring(0,2)));   // Set de HORA y MINUTO
-            cal.set(Calendar.MINUTE, Integer.parseInt(String.valueOf(horaInicio.getText()).substring(3,5)) );            //
-
-            intent.setType("vnd.android.cursor.item/event");
-
-            intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, cal.getTimeInMillis());
-            intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, cal.getTimeInMillis() + 60 * 60 * 500);
-
-            //intent.putExtra(CalendarContract.Events.ALL_DAY, duracion.isSelected());
-            intent.putExtra(CalendarContract.Events.TITLE, registro.getText().toString());
-            //intent.putExtra(CalendarContract.Events.DESCRIPTION, registro.getText().toString());
-            //intent.putExtra(CalendarContract.Events.EVENT_LOCATION, localizacion.getText().toString());
-
-            activity.startActivity(intent);
-            */
         }
     }
 }

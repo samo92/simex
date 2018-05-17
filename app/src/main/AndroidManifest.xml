@@ -11,17 +11,24 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icono_simex"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icono_simex"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/SearchAppTheme">
+
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
 
         <!--
@@ -38,10 +45,54 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
         <activity android:name=".ProgramasActivity" />
         <activity android:name=".Ui.ProgramaRecycler" />
-        <activity android:name=".CreditosActivity"></activity>
+        <activity android:name=".CreditosActivity" />
+
+        <!-- this is the searchable activity; it performs searches -->
+        <activity
+            android:name=".SearchableActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <!--
+             this activity enables the search dialog to initiate searches
+             in the SearchableActivity
+        -->
+        <activity
+            android:name=".BusquedaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchAppTheme" />
+        <activity
+            android:name=".EmptyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExpositoresActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".NosotrosActivity" />
+        <activity android:name=".Ui.PonenteRecycler" />
+        <activity
+            android:name=".DetalleEventosActivity"
+            android:label="@string/title_activity_detalle_eventos"
+            android:theme="@style/SearchAppTheme">
+
+        </activity>
+        <activity android:name=".SeleccionaMapasActivity" >
+
+        </activity>
+
+        <activity android:name=".MapSedeActivity">
+
+        </activity>
     </application>
 
 </manifest>

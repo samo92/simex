@@ -26,17 +26,21 @@ import retrofit2.Response;
 
 public class ProgramaRecycler extends AppCompatActivity {
 
-    private PostApiService postApiService;
-
     private ProgramaAdapterRecyclerView programaAdaptador;
 
     private String idDia;
+    private Programas programa;
+    private ArrayList<Dia_3005> arrayDia;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programarecycler);
 
+        Bundle bundle = getIntent().getExtras();
+        programa = (Programas) bundle.getSerializable("objPrograma");
+
+        //programa = (Programas) savedInstanceState.getSerializable("objPrograma");
         idDia = getIntent().getExtras().getString("dia");
         Log.e("RESPUESTA: ", idDia);
 
@@ -44,6 +48,18 @@ public class ProgramaRecycler extends AppCompatActivity {
     }
 
     private void initViews() {
+
+        switch (idDia) {
+            case "3005":
+                arrayDia=programa.getDayOne();
+                break;
+            case "3105":
+                arrayDia=programa.getDayTwo();
+                break;
+            case "0106":
+                arrayDia=programa.getDayThree();
+                break;
+        }
 
         //Instanciamos nuestro RecyclerView
         RecyclerView programaRecycler = (RecyclerView) findViewById(R.id.programaRecycler);
@@ -57,42 +73,10 @@ public class ProgramaRecycler extends AppCompatActivity {
 
         //Instanciamos nuestro adaptador
         programaAdaptador =
-                new ProgramaAdapterRecyclerView(new ArrayList<Dia_3005>(0), R.layout.cardview_pressdetail, this);
+                new ProgramaAdapterRecyclerView(arrayDia, R.layout.cardview_pressdetail, this);
         programaRecycler.setAdapter(programaAdaptador);
 
-        loadJSON();
 
-    }
 
-    private void loadJSON(){
-        postApiService = ApiService.createApiService();
-        Call<Programas> responsePost = postApiService.getPrograma();
-
-        responsePost.enqueue(new Callback<Programas>() {
-            @Override
-            public void onResponse(Call<Programas> call, Response<Programas> response) {
-                Programas programa = response.body();
-                Log.e("idDia",programa.getDayOne().get(1).getActividad());
-                switch (idDia) {
-                    case "3005":
-                        programaAdaptador.updateAdapter(programa.getDayOne());
-                        break;
-                    case "3105":
-                        programaAdaptador.updateAdapter(programa.getDayTwo());
-                        break;
-                    case "0106":
-                        programaAdaptador.updateAdapter(programa.getDayThree());
-                        break;
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Programas> call, Throwable t) {
-
-            }
-        });
-    }
-
-    private void limpiarJsonPost(String data){
     }
 }

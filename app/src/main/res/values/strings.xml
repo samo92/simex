@@ -1,4 +1,33 @@
 <resources>
-    <string name="app_name">SIMexFacMed</string>
+    <string name="app_name">SIMEX</string>
     <string name="title_activity_maps">Map</string>
+    <string name="app_label">SIMexFacMed</string>
+    <string name="search_hint">Busca una platica...</string>
+    <string name="title_activity_detalle_eventos">DetalleEventosActivity</string>
+
+    <string name="button_palacio_sede">
+        <font size='20' color='#0C1C60'>PALACIO DE LA ESCUELA DE M...
+        </font><font size='15' color='#00C3FF'>Republica de Brasil No. 33, esquina...
+        </font>
+    </string>
+
+    <string name="button_palacio_medicina">
+        <font size='20' color='#0C1C60'>FACULTAD DE MEDICINA - CU
+        </font><font size='15' color='#00C3FF'>Circuito escolar universitario
+        </font>
+    </string>
+
+    <string name="button_palacio_posgrado">
+        <font size='20' color='#0C1C60'>UNIDAD DE POSGRADO - CU
+        </font><font size='15' color='#00C3FF'>Circuito de posgrados S/N, delegaci...
+        </font>
+    </string>
+
+    <string name="button_palacio_adress">
+        <font size='2' color='#00C3FF'>Republica de Brasil No. 33, esquina...
+        </font>
+    </string>
+
 </resources>
+
+

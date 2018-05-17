@@ -31,11 +31,13 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private static final String PERSON_PREFERENCE_KEY = "MisPreferencias";
+    private static final String PONENTE_PREFERENCE_KEY = "MisPreferenciasPonentes";
 
     private Programas programa;
     private Programas programaPreferences = new Programas();
     private Programas programaRetrofit;
     private SimexPonentes ponentesRetrofit;
+    private SimexPonentes ponentesPreferences = new SimexPonentes();
     private ArrayList<Dia_3005> todoEventos = new ArrayList<>();
     private ArrayList<Ponente> arrayPonentes = new ArrayList<>();
     private PostApiService postApiService;
@@ -84,13 +86,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPonentes(View view) {
-        Intent intent = new Intent(this, PonenteRecycler.class);
-        if(!arrayPonentes.isEmpty() && arrayPonentes!=null){
+
+        if(arrayPonentes!=null && !arrayPonentes.isEmpty()){
+            Intent intent = new Intent(this, PonenteRecycler.class);
             Bundle bundle = new Bundle();
             bundle.putSerializable("arrayPonentes", arrayPonentes);
             intent.putExtras(bundle);
+            startActivity(intent);
         }
-        startActivity(intent);
+
     }
 
     public void goEmpty(View view) {
@@ -143,10 +147,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                setContentView(R.layout.activity_main);
+                /*setContentView(R.layout.activity_main);
 
                 toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);
+                setSupportActionBar(toolbar);*/
 
                 loadJsonPonentes();
 
@@ -164,10 +168,12 @@ public class MainActivity extends AppCompatActivity {
                     programa = programaPreferences;
                 }
 
-                setContentView(R.layout.activity_main);
+                /*setContentView(R.layout.activity_main);
 
                 toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);
+                setSupportActionBar(toolbar);*/
+
+                loadJsonPonentes();
 
             }
         });
@@ -177,14 +183,23 @@ public class MainActivity extends AppCompatActivity {
         postApiService2 = ApiService.createApiService();
         Call<SimexPonentes> responsePost = postApiService2.getPonentes();
 
-        readSharedPreferences();
+        readSharedPreferencesPonentes();
 
         responsePost.enqueue(new Callback<SimexPonentes>() {
             @Override
             public void onResponse(Call<SimexPonentes> call, Response<SimexPonentes> response) {
                 ponentesRetrofit = response.body();
 
+                String jsonPreferences = new Gson().toJson(ponentesPreferences);
+                String jsonRetrofit = new Gson().toJson(ponentesRetrofit);
+
+                if(jsonRetrofit.equals(jsonPreferences)){
+                    arrayPonentes.addAll(ponentesPreferences.getPonentes());
+                }else{
                     arrayPonentes.addAll(ponentesRetrofit.getPonentes());
+                    createSharedPreferencesPonentes(ponentesRetrofit);
+                }
+
                 setContentView(R.layout.activity_main);
 
                 toolbar = (Toolbar) findViewById(R.id.appbar_main);
@@ -193,6 +208,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SimexPonentes> call, Throwable t) {
+
+                if(ponentesPreferences!=null && !ponentesPreferences.toString().isEmpty()){
+                    arrayPonentes.addAll(ponentesPreferences.getPonentes());
+                }
 
                 setContentView(R.layout.activity_main);
 
@@ -235,5 +254,21 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PERSON_PREFERENCE_KEY,0);
         String json = settings.getString("jsonPrograma","");
         programaPreferences = new Gson().fromJson(json, Programas.class);
+    }
+
+    private void createSharedPreferencesPonentes(SimexPonentes simexPonentes){
+        SharedPreferences settings = getSharedPreferences(PONENTE_PREFERENCE_KEY,0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        String json = new Gson().toJson(simexPonentes);
+        editor.putString("jsonPonente",json);
+
+        editor.commit();
+    }
+
+    private void readSharedPreferencesPonentes(){
+        SharedPreferences settings = getSharedPreferences(PONENTE_PREFERENCE_KEY,0);
+        String json = settings.getString("jsonPonente","");
+        ponentesPreferences = new Gson().fromJson(json, SimexPonentes.class);
     }
 }

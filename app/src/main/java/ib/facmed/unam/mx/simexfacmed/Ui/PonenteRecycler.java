@@ -24,13 +24,8 @@ public class PonenteRecycler extends AppCompatActivity {
         setContentView(R.layout.activity_ponenterecycler);
 
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            arrayPonentes = (ArrayList<Ponente>) bundle.getSerializable("arrayPonentes");
-        }else{
-            arrayPonentes.addAll(llenarArray());
-        }
 
-
+        arrayPonentes = (ArrayList<Ponente>) bundle.getSerializable("arrayPonentes");
 
         initViews();
 
@@ -57,7 +52,7 @@ public class PonenteRecycler extends AppCompatActivity {
 
     }
 
-    private ArrayList<Ponente> llenarArray() {
+    /*private ArrayList<Ponente> llenarArray() {
 
         ArrayList<Ponente> arrayPonente = new ArrayList<Ponente>();
 
@@ -127,5 +122,5 @@ public class PonenteRecycler extends AppCompatActivity {
                 R.drawable.ponente_alexander));
 
         return arrayPonente;
-    }
+    }*/
 }

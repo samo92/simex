@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SIMexFacMed</string>
+    <string name="app_name">SIMEX</string>
     <string name="title_activity_maps">Map</string>
     <string name="app_label">SIMexFacMed</string>
     <string name="search_hint">Busca una platica...</string>

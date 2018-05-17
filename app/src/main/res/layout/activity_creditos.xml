@@ -10,26 +10,74 @@
         android:id="@+id/appbar_main">
     </include>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(TEXTO SIMULADO)Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo 'Contenido aquí, contenido aquí'.(TEXTO SIMULADO)"
-            android:paddingBottom="50dp"/>
+            android:text="Departamento de Integracion de Ciencias Medicas"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Informática Biomédica"
+            android:text="Dra. Sara Morales López"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jefe de departamento"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lic. Miguel Torres de la Rosa"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diseñador Gráfico"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dra. Cassandra Durán Cárdenas"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vinculación"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departamento Informática Biomédica"
             android:textColor="@color/colorAccent"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,8 +88,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jefa del departamento"
-            android:textColor="@color/colorPrimary"/>
+            android:text="Jefe de departamento"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +102,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coordinador de investigacion y desarrollo"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,7 +115,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Administrador de proyectos"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +134,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Programadores"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,10 +146,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Diseñadora experiencia de usuario"
+            android:text="Diseñadora de Experiencia de Usuario"
             android:textColor="@color/colorPrimary"/>
 
+
+
     </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>

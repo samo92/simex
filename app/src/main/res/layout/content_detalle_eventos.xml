@@ -62,7 +62,7 @@
         android:id="@+id/tv_evento_nombre"
         android:text="Mesa rendonda - prueba"
         android:textSize="20sp"
-        android:maxLines="2"/>
+        android:maxLines="4"/>
 
     <LinearLayout
         android:layout_width="match_parent"

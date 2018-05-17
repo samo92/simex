@@ -26,14 +26,13 @@ public class SeleccionaMapasActivity extends AppCompatActivity {
 
         btn_medicina = (Button) findViewById(R.id.btn_mapa_facmed);
         btn_medicina.setText(getText(R.string.button_palacio_medicina));
-
-
-        //btn_palacio.setTextSize(Html.fromHt);
-        //android:text="palacio de la escuela de m...\nrepublica de brasil no. 33, esquina..."
     }
 
     public void goShowMaps(View view) {
-        Intent intent = new Intent(this,MapSedeActivity.class);
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(this,MapsActivity.class);
+        bundle.putString("sede", view.getTag().toString() );
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

@@ -25,14 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:text="Bienvenidos al Segundundo Encuentro ... "
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.12"
+            android:layout_weight="0.27"
             android:text="El Segundo Encuentro Internacional de Simulacion SIMex2018 brinda un espacio para los profesionales de la salud, interesados por la simulacion como estrategia educativa, para adquirir e intercambiar experiencias, así como estar en contacto con los avances tecnologicos mas recientes en este campo para incrementar la calidad de la atencion médica y la seguridad de los pacientes."
             />
 

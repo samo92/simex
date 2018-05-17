@@ -14,6 +14,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
+    private String sede="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //Bundle bundle = getIntent().getExtras();
+        sede=getIntent().getExtras().getString("sede");
     }
 
 
@@ -40,18 +45,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng centro = new LatLng(19.378139, -99.156844);
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro,10));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centro,12));
+        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centro,12));
 
         // Add a marker in "Palacio de la escuela de medicina" and move the camera
         LatLng palacioMed = new LatLng(19.437815, -99.133386);
         mMap.addMarker(new MarkerOptions().position(palacioMed).title("Palacio de la escuela de medicina"));
 
+        // Add a marker in "Unidad de posgrado" and move the camera
+        LatLng posgrado = new LatLng(19.309583, -99.185448);
+        mMap.addMarker(new MarkerOptions().position(posgrado).title("Unidad de posgrado"));
+
         // Add a marker in "Facultad de Medicina" and move the camera
         LatLng facMed = new LatLng(19.333250, -99.180235);
         mMap.addMarker(new MarkerOptions().position(facMed).title("Facultad de Medicina"));
 
-        // Add a marker in "Unidad de posgrado" and move the camera
-        LatLng posgrado = new LatLng(19.309583, -99.185448);
-        mMap.addMarker(new MarkerOptions().position(posgrado).title("Unidad de posgrado"));
+        switch(sede){
+            case "palacio" :
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(palacioMed,15));
+                                break;
+            case "posgrado" :
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posgrado,15));
+                                break;
+            case "facmed" :
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(facMed,15));
+                                break;
+        }
+
+
+
+
+
+
+
+
     }
 }

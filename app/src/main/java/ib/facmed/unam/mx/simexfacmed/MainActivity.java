@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goMaps(View view) {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, SeleccionaMapasActivity.class);
         startActivity(intent);
     }
 
@@ -147,11 +147,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                /*setContentView(R.layout.activity_main);
-
-                toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);*/
-
                 loadJsonPonentes();
 
             }
@@ -164,14 +159,9 @@ public class MainActivity extends AppCompatActivity {
                     todoEventos.addAll(programaPreferences.getDayTwo());
                     todoEventos.addAll(programaPreferences.getDayThree());
                     //Log.d("objIGUALES", "RETROFIT Y PREFERENCES: objetos son iguales");
-                    Toast.makeText(MainActivity.this, "usando sharedPreferences", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "usando sharedPreferences", Toast.LENGTH_SHORT).show();
                     programa = programaPreferences;
                 }
-
-                /*setContentView(R.layout.activity_main);
-
-                toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);*/
 
                 loadJsonPonentes();
 
@@ -195,15 +185,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(jsonRetrofit.equals(jsonPreferences)){
                     arrayPonentes.addAll(ponentesPreferences.getPonentes());
+                    //Toast.makeText(MainActivity.this, "usando ponentesPreferences", Toast.LENGTH_SHORT).show();
                 }else{
                     arrayPonentes.addAll(ponentesRetrofit.getPonentes());
                     createSharedPreferencesPonentes(ponentesRetrofit);
+                    //Toast.makeText(MainActivity.this, "usando ponentesRETROFIT", Toast.LENGTH_SHORT).show();
                 }
-
-                setContentView(R.layout.activity_main);
-
-                toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);
             }
 
             @Override
@@ -213,14 +200,16 @@ public class MainActivity extends AppCompatActivity {
                     arrayPonentes.addAll(ponentesPreferences.getPonentes());
                 }
 
-                setContentView(R.layout.activity_main);
-
-                toolbar = (Toolbar) findViewById(R.id.appbar_main);
-                setSupportActionBar(toolbar);
+                //Toast.makeText(MainActivity.this, "usando ponentesPreferences FAIL", Toast.LENGTH_SHORT).show();
 
 
             }
         });
+
+        setContentView(R.layout.activity_main);
+
+        toolbar = (Toolbar) findViewById(R.id.appbar_main);
+        setSupportActionBar(toolbar);
     }
 
     private boolean haveNetworkConnection() {

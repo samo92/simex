@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BusquedaActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
 
     <include layout="@layout/custom_toolbar"/>
 
@@ -17,7 +18,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="Tema"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:checkMark="?android:attr/listChoiceIndicatorMultiple"/>
@@ -29,7 +30,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="Expositor"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:checkMark="?android:attr/listChoiceIndicatorMultiple"/>
@@ -40,7 +41,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="Realiza una busqueda especifica\npor categoria dentro del contenido del programa"
-        android:textSize="14sp"/>
+        android:textSize="18sp"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

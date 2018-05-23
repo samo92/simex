@@ -101,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coordinador de investigacion y desarrollo"
+            android:text="Coordinador de investigación"
             android:textColor="@color/colorPrimary"
             android:layout_marginBottom="10dp"/>
 
@@ -114,7 +114,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Administrador de proyectos"
+            android:text="Coordinador de desarrollo"
             android:textColor="@color/colorPrimary"
             android:layout_marginBottom="10dp"/>
 
@@ -146,7 +146,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Diseñadora de Experiencia de Usuario"
+            android:text="Diseñadora de Interfaz y Experiencia de Usuario"
             android:textColor="@color/colorPrimary"/>
 
 

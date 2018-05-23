@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,14 +48,20 @@ public class ProgramaAdapterRecyclerView
         return new ProgramaViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(ProgramaViewHolder holder, int position) {
         Dia_3005 dia = programasArray.get(position);
+        String ponenteSedeHtml = "<font color='#0C1C60'>"+dia.getPonente()+"<font color='#0C1C60'> | </font>"+"</font><font color='#00C3FF'>"+dia.getSede()+"</font>";
+        String ponenteSede = dia.getPonente() + " | " + dia.getSede();
         holder.horaInicio.setText(dia.getSoloHoraInicio());
         holder.horaFin.setText(dia.getSoloHoraFin());
         holder.registro.setText(dia.getActividad());
-        holder.ponente.setText(dia.getPonente());
-        holder.institucion.setText(dia.getSede());
+        if(dia.getPonente().isEmpty())
+            holder.ponente.setText("");
+        else
+            holder.ponente.setText(Html.fromHtml(ponenteSedeHtml, Html.FROM_HTML_MODE_COMPACT));
+        //holder.institucion.setText(dia.getSede());
 
     }
 
@@ -78,7 +87,7 @@ public class ProgramaAdapterRecyclerView
         private TextView horaFin;
         private TextView registro;
         private TextView ponente;
-        private TextView institucion;
+        //private TextView institucion;
 
         public ProgramaViewHolder(View itemView) {
             super(itemView);
@@ -88,7 +97,7 @@ public class ProgramaAdapterRecyclerView
             horaFin = (TextView) itemView.findViewById(R.id.textView_horaFin);
             registro = (TextView) itemView.findViewById(R.id.textView_registro);
             ponente = (TextView) itemView.findViewById(R.id.textView_ponente);
-            institucion = (TextView) itemView.findViewById(R.id.textView_institucion);
+            //institucion = (TextView) itemView.findViewById(R.id.textView_institucion);
 
         }
 

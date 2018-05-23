@@ -12,40 +12,132 @@
         android:id="@+id/appbar_main">
     </include>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/btn_3005"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goPressDetail"
-        android:text="30 de Mayo, 2018"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="3005"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="2905"
+        android:onClick="goPressDetail">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:id="@+id/btn_3105"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goPressDetail"
-        android:text="31 de Mayo, 2018"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="3105"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Talleres"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginLeft="50dp"/>
 
-    <Button
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/btn_0106"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goPressDetail"
-        android:text="1 de Junio, 2018"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="0106"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="3005"
+        android:onClick="goPressDetail">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="30 de mayo, 2018"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="3105"
+        android:onClick="goPressDetail">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="31 de mayo, 2018"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="0106"
+        android:onClick="goPressDetail">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1 de junio, 2018"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

@@ -6,20 +6,26 @@
     <string name="title_activity_detalle_eventos">DetalleEventosActivity</string>
 
     <string name="button_palacio_sede">
-        <font size='20' color='#0C1C60'>PALACIO DE LA ESCUELA DE M...
-        </font><font size='15' color='#00C3FF'>Republica de Brasil No. 33, esquina...
+        <font size='15' color='#0C1C60'>PALACIO DE LA ESCUELA DE M...
+        </font><font size='15' color='#00C3FF'>\nRepublica de Brasil No. 33, esquina...
         </font>
     </string>
 
     <string name="button_palacio_medicina">
-        <font size='20' color='#0C1C60'>FACULTAD DE MEDICINA - CU
-        </font><font size='15' color='#00C3FF'>Circuito escolar universitario
+        <font size='15' color='#0C1C60'>FACULTAD DE MEDICINA - CU
+        </font><font size='15' color='#00C3FF'>\nCircuito escolar universitario
         </font>
     </string>
 
     <string name="button_palacio_posgrado">
-        <font size='20' color='#0C1C60'>UNIDAD DE POSGRADO - CU
-        </font><font size='15' color='#00C3FF'>Circuito de posgrados S/N, delegaci...
+        <font size='15' color='#0C1C60'>UNIDAD DE POSGRADO - CU
+        </font><font size='15' color='#00C3FF'>\nCircuito de posgrados S/N, delegaci...
+        </font>
+    </string>
+
+    <string name="button_palacio_inr">
+        <font size='15' color='#0C1C60'>INSTITUTO NACIONAL DE REHA...
+        </font><font size='15' color='#00C3FF'>\nCalz México-Xochimilco 289, Arenal...
         </font>
     </string>
 

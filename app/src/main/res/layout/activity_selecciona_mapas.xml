@@ -11,37 +11,132 @@
         android:id="@+id/appbar_main">
     </include>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/btn_mapa_palacio"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goShowMaps"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="palacio"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="palacio"
+        android:onClick="goShowMaps">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:id="@+id/btn_mapa_posgrado"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goShowMaps"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="posgrado"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mapa_palacio"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginStart="20dp"/>
 
-    <Button
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/btn_mapa_facmed"
-        android:drawableRight="@drawable/flechader"
-        android:onClick="goShowMaps"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:tag="facmed"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="posgrado"
+        android:onClick="goShowMaps">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mapa_posgrado"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="facmed"
+        android:onClick="goShowMaps">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mapa_facmed"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:tag="inr"
+        android:onClick="goShowMaps">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_mapa_inr"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_weight="0.85"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flechader"
+            android:layout_weight="0.15"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

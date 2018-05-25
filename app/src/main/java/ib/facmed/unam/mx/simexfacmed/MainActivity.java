@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goPress(View view) {
 
-        if(!todoEventos.isEmpty()){
+        if(programa!=null){
             Intent intent = new Intent(MainActivity.this, ProgramasActivity.class);
             Bundle bundle = new Bundle();
             bundle.putSerializable("objPrograma", programa);
@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     todoEventos.addAll(programaRetrofit.getDayTwo());
                     todoEventos.addAll(programaRetrofit.getDayThree());
                     createSharedPreferences(programaRetrofit);
+                    programa=programaRetrofit;
                     //Toast.makeText(MainActivity.this, "usando retrofit", Toast.LENGTH_SHORT).show();
                 }
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -20,17 +20,21 @@ public class Programas implements Serializable {
     @SerializedName("DayThree")
     private ArrayList<Dia_3005> DayThree = null;
 
+    @SerializedName("TALLERES")
+    private ArrayList<Dia_3005> Talleres = null;
+
         /**
          * No args constructor for use in serialization
          *
          */
         public Programas() {
         }
-        public Programas(ArrayList<Dia_3005> DayOne, ArrayList<Dia_3005> DayTwo, ArrayList<Dia_3005> DayThree) {
+        public Programas(ArrayList<Dia_3005> DayOne, ArrayList<Dia_3005> DayTwo, ArrayList<Dia_3005> DayThree, ArrayList<Dia_3005> Talleres) {
             super();
             this.DayOne = DayOne;
             this.DayTwo = DayTwo;
             this.DayThree = DayThree;
+            this.Talleres = Talleres;
         }
 
     public ArrayList<Dia_3005> getDayOne() {
@@ -55,5 +59,13 @@ public class Programas implements Serializable {
 
     public void setDayThree(ArrayList<Dia_3005> dayThree) {
         DayThree = dayThree;
+    }
+
+    public ArrayList<Dia_3005> getTalleres() {
+        return Talleres;
+    }
+
+    public void setTalleres(ArrayList<Dia_3005> talleres) {
+        Talleres = talleres;
     }
 }

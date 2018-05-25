@@ -7,7 +7,7 @@
     tools:context=".DetalleEventosActivity"
     tools:showIn="@layout/activity_detalle_eventos"
     android:orientation="vertical"
-    android:layout_marginTop="70dp"
+    android:layout_marginTop="63dp"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="10dp">
 
@@ -64,40 +64,33 @@
         android:textSize="20sp"
         android:maxLines="4"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_evento_ponente1"
-            android:textSize="15sp"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_evento_ponente2"
-            android:textSize="15sp"
-            android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_evento_ponente1"
+                android:text="Informacion del evento"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_evento_ponente3"
-            android:textSize="15sp"
-            android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_evento_nota"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_evento_ponente4"
-            android:textSize="15sp"
-            android:layout_marginBottom="8dp"/>
+        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 
 

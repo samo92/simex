@@ -1,13 +1,19 @@
 package ib.facmed.unam.mx.simexfacmed;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -15,11 +21,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
 
     private String sede="";
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.content_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -27,6 +34,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Bundle bundle = getIntent().getExtras();
         sede=getIntent().getExtras().getString("sede");
+
+        fab = (FloatingActionButton) findViewById(R.id.fab_waze);
+        //fab.setVisibility(View.INVISIBLE);
+
     }
 
 
@@ -43,9 +54,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        mMap.getUiSettings().setMapToolbarEnabled(false);
+
         LatLng centro = new LatLng(19.378139, -99.156844);
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro,10));
-        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centro,12));
 
         // Add a marker in "Palacio de la escuela de medicina" and move the camera
         LatLng palacioMed = new LatLng(19.437815, -99.133386);
@@ -59,27 +70,75 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng facMed = new LatLng(19.333250, -99.180235);
         mMap.addMarker(new MarkerOptions().position(facMed).title("Facultad de Medicina"));
 
+        // Add a marker in "Instituto Nacional de Rehabilitacion" and move the camera
+        LatLng inr = new LatLng(19.289642, -99.149272);
+        mMap.addMarker(new MarkerOptions().position(inr).title("Instituto Nacional de Rehabilitación"));
+
         switch(sede){
             case "palacio" :
 
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(palacioMed,15));
+
+                                goWaze(palacioMed.latitude,palacioMed.longitude);
                                 break;
             case "posgrado" :
 
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posgrado,15));
+                                goWaze(posgrado.latitude,posgrado.longitude);
                                 break;
             case "facmed" :
 
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(facMed,15));
+                                goWaze(facMed.latitude,facMed.longitude);
+                                break;
+            case "inr" :
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(inr,15));
+                                goWaze(inr.latitude,inr.longitude);
                                 break;
         }
 
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                double latitude=marker.getPosition().latitude;
+                double longitud=marker.getPosition().longitude;
+                //fab.setVisibility(View.VISIBLE);
+                goWaze(latitude,longitud);
+                return false;
+            }
+        });
+
+        /*mMap.setOnInfoWindowCloseListener(new GoogleMap.OnInfoWindowCloseListener() {
+            @Override
+            public void onInfoWindowClose(Marker marker) {
+                fab.setVisibility(View.INVISIBLE);
+            }
+        });*/
 
 
 
+    }
 
-
-
-
+    public void goWaze(final double lat, final double lon){
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try
+                {
+                    // Launch Waze to look for Hawaii:
+                    //String url = "https://waze.com/ul?q=Hawaii";
+                    String urlNavigateLocation="https://waze.com/ul?ll="+lat+","+lon+"&navigate=yes";
+                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( urlNavigateLocation ) );
+                    startActivity( intent );
+                }
+                catch ( ActivityNotFoundException ex  )
+                {
+                    // If Waze is not installed, open it in Google Play:
+                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.waze" ) );
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

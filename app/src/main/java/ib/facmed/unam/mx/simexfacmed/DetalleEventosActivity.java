@@ -16,8 +16,7 @@ import ib.facmed.unam.mx.simexfacmed.Models.Dia_3005;
 
 public class DetalleEventosActivity extends AppCompatActivity {
 
-    TextView fecha,horaInicio,horaFin,nombreEvento,ponente1,ponente2,ponente3,ponente4,sede1,sede2,sede3,sede4;
-    View view1,view2,view3,view4;
+    TextView fecha,horaInicio,horaFin,nombreEvento,ponente1,notaEvento;
     private Dia_3005 detalleEvento;
 
 
@@ -49,16 +48,19 @@ public class DetalleEventosActivity extends AppCompatActivity {
         horaFin = (TextView) findViewById(R.id.tv_evento_hora_fin);
         nombreEvento = (TextView) findViewById(R.id.tv_evento_nombre);
         ponente1 = (TextView) findViewById(R.id.tv_evento_ponente1);
-        ponente2 = (TextView) findViewById(R.id.tv_evento_ponente2);
-        ponente3 = (TextView) findViewById(R.id.tv_evento_ponente3);
-        ponente4 = (TextView) findViewById(R.id.tv_evento_ponente4);
+        notaEvento = (TextView) findViewById(R.id.tv_evento_nota);
 
         fecha.setText(detalleEvento.getFechaCompleta());
         horaInicio.setText(detalleEvento.getSoloHoraInicio());
         horaFin.setText(detalleEvento.getSoloHoraFin());
         nombreEvento.setText(detalleEvento.getActividad());
+        if(!detalleEvento.getNota().isEmpty()) {
+            String notaTexto = "Nota: "+detalleEvento.getNota();
+            notaEvento.setText(notaTexto);
+        }
 
         /* Creamos string del formato Html para llenar los textview "ponentes" */
+
         String PonenteSede1 = "<font size='15' color='#0C1C60'>" + detalleEvento.getPonente() +"</font>"
                 + "<font size='15' color='#0C1C60'>" + " | " +"</font>"
                 + "<font size='15' color='#00C3FF'>" + detalleEvento.getSede() +"</font>" ;
@@ -75,25 +77,31 @@ public class DetalleEventosActivity extends AppCompatActivity {
                 + "<font size='15' color='#0C1C60'>" + " | " +"</font>"
                 + "<font size='15' color='#00C3FF'>" + detalleEvento.getSede4() +"</font>" ;
 
+        String LugarEvento = "<font size='15'>Lugar: "+detalleEvento.getLugar()+"</font>";
+
+        String giantCad;
+
 
         if(detalleEvento.getSede()==null || detalleEvento.getSede().isEmpty()){
 
         }else if(detalleEvento.getSede2()==null || detalleEvento.getSede2().isEmpty()){
-            ponente1.setText(Html.fromHtml(PonenteSede1, Html.FROM_HTML_MODE_COMPACT));
+            giantCad = PonenteSede1+"<p><br>"+LugarEvento+"</p>";
+            ponente1.setText(Html.fromHtml(giantCad, Html.FROM_HTML_MODE_COMPACT));
 
         }else if(detalleEvento.getSede3()==null || detalleEvento.getSede3().isEmpty()){
-            ponente1.setText(Html.fromHtml(PonenteSede1, Html.FROM_HTML_MODE_COMPACT));
-            ponente2.setText(Html.fromHtml(PonenteSede2, Html.FROM_HTML_MODE_COMPACT));
+            giantCad = PonenteSede1+"<p><br>"+PonenteSede2
+                    +"</p><br><p>"+LugarEvento+"</p>";
+            ponente1.setText(Html.fromHtml(giantCad, Html.FROM_HTML_MODE_COMPACT));
 
         }else if(detalleEvento.getSede4()==null || detalleEvento.getSede4().isEmpty()){
-            ponente1.setText(Html.fromHtml(PonenteSede1, Html.FROM_HTML_MODE_COMPACT));
-            ponente2.setText(Html.fromHtml(PonenteSede2, Html.FROM_HTML_MODE_COMPACT));
-            ponente3.setText(Html.fromHtml(PonenteSede3, Html.FROM_HTML_MODE_COMPACT));
+            giantCad = PonenteSede1+"<p><br>"+PonenteSede2
+                    +"</p><br><p>"+PonenteSede3+"</p><br><p>"+LugarEvento+"</p>";
+            ponente1.setText(Html.fromHtml(giantCad, Html.FROM_HTML_MODE_COMPACT));
         }else{
-            ponente1.setText(Html.fromHtml(PonenteSede1, Html.FROM_HTML_MODE_COMPACT));
-            ponente2.setText(Html.fromHtml(PonenteSede2, Html.FROM_HTML_MODE_COMPACT));
-            ponente3.setText(Html.fromHtml(PonenteSede3, Html.FROM_HTML_MODE_COMPACT));
-            ponente4.setText(Html.fromHtml(PonenteSede4, Html.FROM_HTML_MODE_COMPACT));
+            giantCad = PonenteSede1+"<p><br>"+PonenteSede2
+                    +"</p><br><p>"+PonenteSede3+"</p><br><p>"+PonenteSede4+"</p><br><p>"
+                    +LugarEvento+"</p>";
+            ponente1.setText(Html.fromHtml(giantCad, Html.FROM_HTML_MODE_COMPACT));
         }
     }
 

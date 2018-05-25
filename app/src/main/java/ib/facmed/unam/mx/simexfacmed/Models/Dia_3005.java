@@ -25,11 +25,13 @@ public class Dia_3005 implements Serializable {
     private String sede3;
     private String ponente4;
     private String sede4;
+    private String lugar;
+    private String nota;
 
     public Dia_3005() {
     }
 
-    public Dia_3005(String horaInicio, String horaFin, String actividad, String ponente, String sede, String ponente2, String sede2, String ponente3, String sede3, String ponente4, String sede4) {
+    public Dia_3005(String horaInicio, String horaFin, String actividad, String ponente, String sede, String ponente2, String sede2, String ponente3, String sede3, String ponente4, String sede4, String lugar, String nota) {
         super();
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
@@ -42,6 +44,8 @@ public class Dia_3005 implements Serializable {
         this.sede3 = sede3;
         this.ponente4 = ponente4;
         this.sede4 = sede4;
+        this.lugar = lugar;
+        this.nota = nota;
     }
 
     public String getHoraInicio() {
@@ -164,6 +168,29 @@ public class Dia_3005 implements Serializable {
         this.sede4 = sede4;
     }
 
+    public String getLugar() {
+        if (lugar != null)
+            return lugar;
+        else {
+            return "";
+        }
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getNota() {
+        if (nota != null)
+            return nota;
+        else {
+            return "";
+        }
+    }
+
+    public void setNota(String nota) {
+        this.nota = nota;
+    }
 
     //Metodos adicionales
 
@@ -204,6 +231,9 @@ public class Dia_3005 implements Serializable {
         if (horaInicio != null) {
             String dia = horaInicio.substring(8, 10);
             switch (dia){
+                case "29":
+                    fecha = "29 de Mayo del 2018";
+                    break;
                 case "30":
                     fecha = "30 de Mayo del 2018";
                     break;
@@ -219,4 +249,6 @@ public class Dia_3005 implements Serializable {
             return fecha;
         }
     }
+
+
 }

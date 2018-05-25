@@ -59,6 +59,9 @@ public class ProgramaRecycler extends AppCompatActivity {
             case "0106":
                 arrayDia=programa.getDayThree();
                 break;
+            case "2905":
+                arrayDia=programa.getTalleres();
+                break;
         }
 
         //Instanciamos nuestro RecyclerView
